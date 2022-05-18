@@ -1,4 +1,4 @@
-package com.library.utils;
+package com.library.common.utils;
 
 
 import org.springframework.beans.BeanUtils;
