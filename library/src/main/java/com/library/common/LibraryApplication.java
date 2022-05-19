@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
-@MapperScan("com.library.mapper")
+@MapperScan("com.library.common.mapper")
 @EnableScheduling
 public class LibraryApplication {
 
