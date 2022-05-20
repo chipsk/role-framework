@@ -53,6 +53,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
         //从redis中获取用户信息
         LoginUser loginUser = redisCache.getCacheObject("librarylogin:" + userId);
+
         //如果获取不到
         if (Objects.isNull(loginUser)) {
             //说明登录过期, 提示重新登录
@@ -62,7 +63,7 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
         }
         //存入SecurityContextHolder
         UsernamePasswordAuthenticationToken authenticationToken =
-                new UsernamePasswordAuthenticationToken(loginUser, null, null);
+                new UsernamePasswordAuthenticationToken(loginUser, null, loginUser.getAuthorities());
         SecurityContextHolder.getContext().setAuthentication(authenticationToken);
 
         filterChain.doFilter(request, response);
