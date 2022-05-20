@@ -2,4 +2,4 @@
 
 #### Description
 智慧图书馆
-springboot + mybatis-plus + springsecurity
+springboot + mybatis-plus + springsecurity + redis
